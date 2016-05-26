@@ -9,16 +9,28 @@ $config_dir = $root."/config/";
 require_once($config_dir."url.php");
 require_once($config_dir."request.php");
 
+require_once("lib/lib.php");
+
 $db = db_connect("guest");
 
 $oo = new Objects();
 $mm = new Media();
 $ww = new Wires();
 $uu = new URL();
-// $rr = new Request();
+$rr = new Request();
 
 // document title
 $title = date("H:i:s");
+
+$on = $_REQUEST['status'];
+if (isset($on)) {
+    set_cookie("status", $on);
+}
+else
+    $on = get_cookie("status");
+
+if (!isset($on))
+    die($title);
 
 ?><!DOCTYPE html>
 <html>

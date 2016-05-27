@@ -116,6 +116,7 @@ function draw(d)
     if (show_hands)
     {
         update_time(d);
+        update_title();
         draw_hands();
     }
 }
@@ -146,8 +147,16 @@ function draw_circle()
     context.stroke();
 }
 
-function update_time(d)
+function pad_str(num)
 {
+    var str, pad;
+    str = "" + num;
+    pad = "00";
+    return pad.substring(0, pad.length - str.length) + str;
+}
+
+function update_time(d)
+{   
     if (d === undefined)
         d = new Date();
 
@@ -155,6 +164,14 @@ function update_time(d)
     time.m = d.getMinutes();
     time.s = d.getSeconds();
     time.ms = d.getMilliseconds();
+}
+
+function update_title()
+{
+    var ts;
+    
+    ts = pad_str(time.h) + ":" + pad_str(time.m) + ":" + pad_str(time.s);
+    document.title = ts;
 }
 
 function draw_hands()

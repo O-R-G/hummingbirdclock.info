@@ -12,6 +12,8 @@ var center = {};
 var time = {};
 var hand_lengths;
 var hand_widths;
+var s_history;
+var s_length = 1000;
 
 // timer variables;
 var hand_timer;
@@ -68,6 +70,8 @@ function set_size(width, height)
     // set the center x and y coordinates
     center.x = width;
     center.y = height;
+    
+    s_history = new Array();
     
     return;
 }
@@ -176,7 +180,7 @@ function update_title()
 
 function draw_hands()
 {
-    var rad, k, x, y;
+    var rad, k, x, y, s, i;
 
     // get angles for each hand (hours, minutes, seconds)
     rad = {};
@@ -194,6 +198,13 @@ function draw_hands()
         rad[key] -= Math.PI / 2.0;
     });
 
+    for (i = 0; i < s_length && i < s_history.length; i++)
+    {
+        alpha = 1 - (s_length - i) / s_length;
+        k = s_history[i];
+        context.fillStyle = 'rgba(255, 0, 0, '+ alpha +'';
+        context.fillRect(k.x, k.y, 5, 5);
+    }
     // draw hands on canvas
     for(k in rad)
     {
@@ -203,8 +214,24 @@ function draw_hands()
         context.moveTo(center.x, center.y);
         x = Math.cos(rad[k]) * hand_lengths[k] + center.x;
         y = Math.sin(rad[k]) * hand_lengths[k] + center.y;
+        if (k == "s")
+        {
+            rand = Math.floor((Math.random()*5)) / 100;
+            rand = 1 - rand;
+            x = Math.cos(rad[k]) * hand_lengths[k] * rand + center.x;
+            y = Math.sin(rad[k]) * hand_lengths[k] * rand + center.y;
+            s = {
+                x: x,
+                y: y,
+            }
+            s_history.push(s);
+            if (s_history.length > s_length)
+                s_history.shift();
+        }
         context.lineTo(x, y);
         context.stroke();
     }
+    
+
 }
 

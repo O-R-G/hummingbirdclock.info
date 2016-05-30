@@ -180,7 +180,7 @@ function update_title()
 
 function draw_hands()
 {
-    var rad, k, x, y, s, i;
+    var rad, k, x, y, s, i, l;
 
     // get angles for each hand (hours, minutes, seconds)
     rad = {};
@@ -216,13 +216,20 @@ function draw_hands()
         y = Math.sin(rad[k]) * hand_lengths[k] + center.y;
         if (k == "s")
         {
-            rand = Math.floor((Math.random()*5)) / 100;
-            rand = 1 - rand;
-            x = Math.cos(rad[k]) * hand_lengths[k] * rand + center.x;
-            y = Math.sin(rad[k]) * hand_lengths[k] * rand + center.y;
+            if (s_history.length > 0)
+                l = s_history[s_history.length - 1].l;
+            else
+                l = hand_lengths[k];
+            
+            rand = (Math.floor(Math.random() * 3) - 1);
+            l += rand;
+            
+            x = Math.cos(rad[k]) * l + center.x;
+            y = Math.sin(rad[k]) * l + center.y;
             s = {
                 x: x,
                 y: y,
+                l: l
             }
             s_history.push(s);
             if (s_history.length > s_length)

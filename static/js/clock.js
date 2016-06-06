@@ -45,9 +45,15 @@ function set_size(width, height)
     
     hand_widths = 
     {
+	/*
         h: 0.015,
         m: 0.015,
         s: 0.007,
+        circle: 0.015
+        */
+	h: 0.008,
+        m: 0.008,
+        s: 0.004,
         circle: 0.015
     };
     hand_lengths = 
@@ -139,8 +145,6 @@ function fill_bg()
     context.strokeStyle = colours.bg;
     context.fillStyle = colours.bg;
     context.fillRect(0, 0, center.x*2, center.y*2);
-    
-
 }
 
 function draw_circle()
@@ -155,9 +159,10 @@ function draw_circle()
     context.fill();
     
     context.font = get_font();
-    context.fillStyle = "white";
+    context.fillStyle = "#999999";
     context.textAlign = "center";
     context.fillText("THE HUMMINGBIRD CLOCK", center.x, center.y - r / 2);
+    // context.fillText("?", center.x, center.y - r / 2);
 }
 
 var font_base = 1000;

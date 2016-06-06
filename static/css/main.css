@@ -38,16 +38,15 @@ a,
 a:link,
 a:visited {
     text-decoration: none;
-    color: black;
-}
-
-a:hover {
     color: red;
 }
 
+a:hover {
+    color: white;
+}
+
 #claims {
-    position: fixed;
+    padding-top: 21px;
     bottom: 0px; 
     left: 0px;
-    padding: 20px;
 }

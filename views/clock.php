@@ -5,9 +5,7 @@ $obj = json_decode($json);
 $freqs = $obj->frequencies;
 ?><script type="text/javascript" src="<? echo $host; ?>static/js/clock.js"></script>
 <script type="text/javascript" src="<? echo $host; ?>static/js/hum.js"></script>
-<div id="claims">
-    <a href= "mailto:claims@hummingbirdclock.info">Submit a Claim. . . </a>
-</div>
+
 <div id="clock-container">
     <a href="/about">
         <canvas id="clock-canvas"></canvas>

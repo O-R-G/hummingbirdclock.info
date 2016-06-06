@@ -33,3 +33,21 @@ body {
 #clock-container {
     background-color: white;
 }
+
+a,
+a:link,
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: red;
+}
+
+#claims {
+    position: fixed;
+    bottom: 0px; 
+    left: 0px;
+    padding: 20px;
+}

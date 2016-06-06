@@ -159,7 +159,7 @@ function draw_circle()
     context.fill();
     
     context.font = get_font();
-    context.fillStyle = "#999999";
+    context.fillStyle = "#FFFFFF";
     context.textAlign = "center";
     context.fillText("THE HUMMINGBIRD CLOCK", center.x, center.y - r / 2);
     // context.fillText("?", center.x, center.y - r / 2);

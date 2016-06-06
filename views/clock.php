@@ -4,6 +4,7 @@ $json = file_get_contents($json_url);
 $obj = json_decode($json);
 $freqs = $obj->frequencies;
 ?><script type="text/javascript" src="<? echo $host; ?>static/js/clock.js"></script>
+<script type="text/javascript" src="<? echo $host; ?>static/js/hum.js"></script>
 <div id="clock-container">
     <canvas id="clock-canvas"></canvas>
 </div>
@@ -20,4 +21,5 @@ $freqs = $obj->frequencies;
     colours.circleopen = '#ffffff';
         
     init_clock(canvas_id);
+    init_hum();
 </script>

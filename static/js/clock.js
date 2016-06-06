@@ -139,6 +139,8 @@ function fill_bg()
     context.strokeStyle = colours.bg;
     context.fillStyle = colours.bg;
     context.fillRect(0, 0, center.x*2, center.y*2);
+    
+
 }
 
 function draw_circle()
@@ -151,6 +153,21 @@ function draw_circle()
     context.arc(center.x, center.y, r, 0, 2* Math.PI);
     context.stroke();
     context.fill();
+    
+    context.font = get_font();
+    context.fillStyle = "white";
+    context.textAlign = "center";
+    context.fillText("THE HUMMINGBIRD CLOCK", center.x, center.y - r / 2);
+}
+
+var font_base = 1000;
+var font_size = 70;
+
+function get_font()
+{
+    var ratio = font_size / font_base;
+    var size = r * ratio;
+    return (size|0) + 'px Helvetica';
 }
 
 function pad_str(num)
@@ -180,6 +197,8 @@ function update_title()
     document.title = ts;
 }
 
+var s_min = .88;
+var s_max = .92;
 function draw_hands()
 {
     var rad, k, x, y, s, i, l;
@@ -224,9 +243,14 @@ function draw_hands()
                 l = hand_lengths[k];
             
             rand = (Math.floor(Math.random() * 3) - 1);
-            l += rand;
-            vco.frequency.value += rand * hum_delta;
             
+            if (l < r * s_min & rand < 0)
+                rand = 1;
+            else if (l > r * s_max & rand > 0)
+                rand = -1;
+            
+            vco.frequency.value += rand * hum_delta;
+            l += rand;   
             x = Math.cos(rad[k]) * l + center.x;
             y = Math.sin(rad[k]) * l + center.y;
             s = {

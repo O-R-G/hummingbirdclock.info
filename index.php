@@ -1,5 +1,17 @@
 <?php
+$uri = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
+
+// only html head -- no content
 require_once("views/head.php");
-require_once("views/clock.php");
+
+// splash page (clock)
+if (empty($uri[0]))
+{
+    require_once("views/clock.php");
+}
+else 
+{
+    require_once("views/body.php");
+}
 require_once("views/foot.php");
 ?>

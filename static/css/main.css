@@ -5,15 +5,31 @@ html, body {
 
 body {
     margin: 0;
-    background-color: #FFF;
-    color: #000;
+    background-color: #000;
+    color: #fff;
     font-family: "helvetica-neue-r", "helvetica neue", helvetica, sans-serif;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 18px;
+    line-height: 21px;
 }
 
 #body {
     max-width: 540px;
     margin: 0 auto;
-    padding: 50px 20px;
+    padding: 100px 20px;
+    background-color: black;
+    color: white;
+}
+
+#body > header {
+    text-align: center;
+    padding-bottom: 19px;
+    color: red;
+}
+
+#body > span {
+    padding-left: 30px;
+}
+
+#clock-container {
+    background-color: white;
 }

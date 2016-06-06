@@ -1,4 +1,6 @@
 <?
 $object = $oo->get($uu->id);
 ?>
-<section id="body"><? echo nl2br($object['body']); ?></section>
+<section id="body">
+    <header><? echo $object['name1']; ?></header>
+    <? echo nl2br($object['body']); ?></section>

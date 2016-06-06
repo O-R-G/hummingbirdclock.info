@@ -6,7 +6,9 @@ $freqs = $obj->frequencies;
 ?><script type="text/javascript" src="<? echo $host; ?>static/js/clock.js"></script>
 <script type="text/javascript" src="<? echo $host; ?>static/js/hum.js"></script>
 <div id="clock-container">
-    <canvas id="clock-canvas"></canvas>
+    <a href="/about">
+        <canvas id="clock-canvas"></canvas>
+    </a>
 </div>
 <script>
     var cnavas_id, size, colours;

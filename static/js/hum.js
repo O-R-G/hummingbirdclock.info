@@ -1,4 +1,5 @@
-var audio_context = new AudioContext();
+// var audio_context = new AudioContext();
+var audio_context = new webkitAudioContext(); // webkit prefix makes it work in safari
 var hum_timer;
 var hum_delta = 1;
 var hum_base = 200;
@@ -7,7 +8,7 @@ var hum_max = 400;
 
 // vco
 var vco = audio_context.createOscillator();
-vco.type = 'triangle';
+vco.type = 'sine';
 vco.frequency.value = hum_base;
 vco.start(0);
 

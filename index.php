@@ -5,7 +5,7 @@ $uri = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
 require_once("views/head.php");
 
 // splash page (clock)
-if (empty($uri[0]))
+if (empty($uri[0]) || $uri[0] == "?status=on")
 {
     require_once("views/clock.php");
 }

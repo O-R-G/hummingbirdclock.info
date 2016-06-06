@@ -244,13 +244,12 @@ function draw_hands()
             
             rand = (Math.floor(Math.random() * 3) - 1);
             
-            vco.frequency.value += rand * hum_delta;
-            
             if (l < r * s_min & rand < 0)
                 rand = 1;
             else if (l > r * s_max & rand > 0)
                 rand = -1;
             
+            vco.frequency.value += rand * hum_delta;
             l += rand;   
             x = Math.cos(rad[k]) * l + center.x;
             y = Math.sin(rad[k]) * l + center.y;

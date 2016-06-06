@@ -147,8 +147,10 @@ function draw_circle()
     context.lineCap = 'round';
     context.lineWidth = hand_widths.circle;
     context.beginPath();
+    context.fillStyle = "#000000";
     context.arc(center.x, center.y, r, 0, 2* Math.PI);
     context.stroke();
+    context.fill();
 }
 
 function pad_str(num)
@@ -223,6 +225,7 @@ function draw_hands()
             
             rand = (Math.floor(Math.random() * 3) - 1);
             l += rand;
+            vco.frequency.value += rand * hum_delta;
             
             x = Math.cos(rad[k]) * l + center.x;
             y = Math.sin(rad[k]) * l + center.y;

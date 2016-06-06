@@ -1,4 +1,9 @@
-<script type="text/javascript" src="<? echo $host; ?>static/js/clock.js"></script>
+<?
+$json_url = "http://lvps92-51-132-110.dedicated.hosteurope.de:28018/clock/last";
+$json = file_get_contents($json_url);
+$obj = json_decode($json);
+$freqs = $obj->frequencies;
+?><script type="text/javascript" src="<? echo $host; ?>static/js/clock.js"></script>
 <div id="clock-container">
     <canvas id="clock-canvas"></canvas>
 </div>

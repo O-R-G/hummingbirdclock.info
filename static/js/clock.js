@@ -30,7 +30,10 @@ function set_size(width, height)
     
     if (size == "small")
     {
-        width = window.innerWidth * 0.2;
+        if (window.innerWidth > 768)
+            width = window.innerWidth * 0.2;
+        else
+            width = window.innerWidth * 0.5;
         height = width;
         line_width_factor = 2.0;
     }
@@ -161,7 +164,8 @@ function draw_circle()
     context.font = get_font();
     context.fillStyle = "#FFFFFF";
     context.textAlign = "center";
-    context.fillText("THE HUMMINGBIRD CLOCK", center.x, center.y - r / 2);
+    if (size == "large")
+        context.fillText("THE HUMMINGBIRD CLOCK", center.x, center.y - r / 2);
     // context.fillText("?", center.x, center.y - r / 2);
 }
 

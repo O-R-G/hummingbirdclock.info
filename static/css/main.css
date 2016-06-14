@@ -34,6 +34,11 @@ body {
     background-color: white;
 }
 
+#clock-container.small {
+    background-color: transparent;
+    position: fixed;
+}
+
 a,
 a:link,
 a:visited {
@@ -45,8 +50,24 @@ a:hover {
     color: white;
 }
 
+/* list stuff */
+ul {
+    list-style-type: none;
+    padding: 0px;
+}
 #claims {
     padding-top: 21px;
     bottom: 0px; 
     left: 0px;
+}
+
+/* mobil-ify */
+@media screen and (max-width: 768px) {
+    #clock-container.small {
+        position: static;
+    }
+    
+    #body {
+        padding: 20px;
+    }
 }

@@ -8,7 +8,10 @@ require_once("views/head.php");
 require_once("views/clock.php");
 
 if (!empty($uri[0])) {
-    require_once("views/body.php");
+    if ($uri[0] == "submit")
+        require_once("views/submit.php");
+    else
+        require_once("views/body.php");
 }
 require_once("views/foot.php");
 ?>

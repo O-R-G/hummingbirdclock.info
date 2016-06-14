@@ -11,7 +11,7 @@ $object = $oo->get($uu->id);
         foreach($children as $child)
         {
             $c_url = $uu->url."/".$child['url'];
-        ?><li><a href="<?= $c_url; ?>" target="blank"><?= $child['name1']; ?></a></li><?
+        ?><li><a href="<?= $c_url; ?>"><?= $child['name1']; ?></a></li><?
         }
         ?></ul><?
         echo nl2br($object['deck']);

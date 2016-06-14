@@ -6,7 +6,7 @@
 ?><script type="text/javascript" src="<? echo $host; ?>static/js/clock.js"></script>
 <script type="text/javascript" src="<? echo $host; ?>static/js/hum.js"></script>
 <?
-if ($uu->id)
+if ($uu->id || $uri[0] == "submit")
 {
 ?><div id="clock-container" class="small"><?
 }
@@ -24,7 +24,7 @@ else
     var cnavas_id, size, colours;
     canvas_id = "clock-canvas";
     <?
-    if ($uu->id)
+    if ($uu->id || $uri[0] == "submit")
     {
     ?>size = "small";<?
     }

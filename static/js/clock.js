@@ -228,7 +228,7 @@ function draw_hands()
     {
         alpha = 1 - (s_length - i) / s_length;
         k = s_history[i];
-        context.fillStyle = 'rgba(255, 0, 0, '+ alpha +'';
+        context.fillStyle = 'rgba(255, 0, 0, '+ alpha +')';
         context.fillRect(k.x, k.y, 5, 5);
     }
     // draw hands on canvas

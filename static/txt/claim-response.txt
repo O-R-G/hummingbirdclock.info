@@ -1,8 +1,0 @@
-Hello [name],
-
-Thank you for submitting a claim to the Hummingbird Clock.
-
-We will evaluate it and be in contact soon.
-
-Best,
-HC

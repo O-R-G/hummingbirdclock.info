@@ -45,20 +45,25 @@ if($_POST['action'] != "mail")
     </table>
     <input type='hidden' name='action' value='mail'>
     <input type="submit" name="submit" value="Submit">
-</form>
-</section><?
+</form><?
+?></section><?
 }
 else
 {
+    $object = $oo->get($uu->id);
+    
     $hum_name = "Hummingbird Clock Claims";
     $hum_email = "claims@hummingbirdclock.info";
     $hum_subject = "Thank you.";
-    $hum_body = "read this text from a file.";
+    $hum_body = $object['deck'];
     
     $claim_name = $_POST['name'];
     $claim_email = $_POST['email'];
     $claim_subject = "Claim from ".$claim_name;
     $claim_body = $_POST['body'];
+    
+    // modify $hum_body
+    $hum_body = str_replace("[name]", $claim_name, $hum_body);
     
     // TODO
     // + deal with invalid emails
@@ -74,5 +79,7 @@ else
                     $claim_name, $claim_email,
                     $hum_subject, $hum_body);
 
-    ?><section id="body">thank you! a confrimation email has been sent to <?= $claim_email ?>.</section><?
+    $body = $object['body'];
+    $body = str_replace("[email]", $claim_email, $body);
+    ?><section id="body"><? echo $body; ?></section><?
 }

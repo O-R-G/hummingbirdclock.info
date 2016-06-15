@@ -50,16 +50,29 @@ if($_POST['action'] != "mail")
 }
 else
 {
-    foreach($_POST as $k => $v)
-        $$k = $v;
+    $hum_name = "Hummingbird Clock Claims";
+    $hum_email = "claims@hummingbirdclock.info";
+    $hum_subject = "Thank you.";
+    $hum_body = "read this text from a file.";
+    
+    $claim_name = $_POST['name'];
+    $claim_email = $_POST['email'];
+    $claim_subject = "Claim from ".$from_name;
+    $claim_body = $_POST['body'];
+    
+    // TODO
+    // + deal with invalid emails
+    // + send a confirmation email to claimant
+    
+    // send email to hummingbird
+    send_mail_long( $claim_name, $claim_email, 
+                    $hum_name, $hum_email, 
+                    $claim_subject, $claim_body);
+    
+    // send email to claimant
+    send_mail_long( $hum_name, $hum_email,
+                    $claim_name, $claim_email,
+                    $hum_subject, $hum_body);
 
-    $from_name = $name;
-    $from_email = $email;
-    $subject = "Claim from ".$from_name;
-    $to_name = "lily";
-    $to_email = "lilyhealey1@gmail.com";
-    
-    send_mail_long($from_name, $from_email, $to_name, $to_email, $subject, $body);
-    
-    ?>thank you!<?
+    ?><section id="body">thank you! a confrimation email has been sent to <?= $claim_email ?>.</section><?
 }

@@ -8,8 +8,7 @@
 <?
 if ($uu->id || $uri[0] == "submit")
 {
-?><div id="clock-container" class="small">
-    <header><a href="/">THE HUMMINGBIRD CLOCK</a></header><?
+?><div id="clock-container" class="small"><?
 }
 else
 {

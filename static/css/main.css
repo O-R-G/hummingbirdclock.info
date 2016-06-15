@@ -74,8 +74,8 @@ ul {
 textarea,
 input {
     font-size: 12pt;
-    color: #000;
-    background-color: #fff;
+    color: #fff;
+    background-color: #f00;
 }
 
 textarea {
@@ -123,8 +123,6 @@ select:focus,
 textarea:focus,
 button:focus {
     outline: none;
-    color: #fff;
-    background-color: #f00;
 }
 
 td {

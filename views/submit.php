@@ -29,6 +29,7 @@ if($_POST['action'] != "mail")
 {
 ?>
 <section id="body">
+<header>Submit a Claim. . . </header>
 <form action="/submit" method="post">
     <table>
         <tr>
@@ -44,7 +45,7 @@ if($_POST['action'] != "mail")
         </tr>
     </table>
     <input type='hidden' name='action' value='mail'>
-    <input type="submit" name="submit" value="Submit a Claim">
+    <input type="submit" name="submit" value="Submit">
 </form><?
 ?></section><?
 }

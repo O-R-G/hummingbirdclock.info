@@ -16,7 +16,7 @@ $object = $oo->get($uu->id);
         ?></ul><?
         echo nl2br($object['deck']);
         ?><div id="claims">
-            <a href= "mailto:claims@hummingbirdclock.info">Submit a Claim. . . </a>
+            <a href= "/submit">Submit a Claim. . . </a>
         </div><?
     }  
 ?></section>

@@ -41,6 +41,11 @@ body {
 #clock-container.small {
     background-color: transparent;
     position: fixed;
+    padding: 20px;
+}
+
+#clock-container.small > header {
+    text-align: center;
 }
 
 a,

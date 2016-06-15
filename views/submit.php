@@ -57,7 +57,7 @@ else
     
     $claim_name = $_POST['name'];
     $claim_email = $_POST['email'];
-    $claim_subject = "Claim from ".$from_name;
+    $claim_subject = "Claim from ".$claim_name;
     $claim_body = $_POST['body'];
     
     // TODO

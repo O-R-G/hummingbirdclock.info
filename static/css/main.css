@@ -134,6 +134,25 @@ td.label {
     color: #f00;
 }
 
+/* image stuff */
+#images {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20vw;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    padding-right: 20px;
+}
+
+.img-container {
+    padding-top: 20px;
+}
+
+img {
+    width: 100%;
+}
+
 /* mobil-ify */
 @media screen and (max-width: 768px) {
     #clock-container.small {

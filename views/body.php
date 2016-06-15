@@ -15,8 +15,9 @@ $object = $oo->get($uu->id);
         }
         ?></ul><?
         echo nl2br($object['deck']);
-        ?><div id="claims">
-            <a href= "/submit">Submit a Claim. . . </a>
-        </div><?
+        ?><?
     }  
 ?></section>
+<div id="claims">
+    <a href= "/submit">Submit a Claim. . . </a>
+</div>

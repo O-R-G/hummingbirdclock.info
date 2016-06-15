@@ -65,9 +65,10 @@ ul {
     padding: 0px;
 }
 #claims {
-    padding-top: 21px;
-    bottom: 0px; 
-    left: 0px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
 }
 
 textarea,

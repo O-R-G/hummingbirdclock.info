@@ -44,7 +44,7 @@ if($_POST['action'] != "mail")
         </tr>
     </table>
     <input type='hidden' name='action' value='mail'>
-    <input type="submit" name="submit" value="Submit">
+    <input type="submit" name="submit" value="Submit a Claim">
 </form><?
 ?></section><?
 }
@@ -60,10 +60,15 @@ else
     $claim_name = $_POST['name'];
     $claim_email = $_POST['email'];
     $claim_subject = "Claim from ".$claim_name;
-    $claim_body = $_POST['body'];
+    $claim_body = $object['notes']; //$_POST['body'];
     
     // modify $hum_body
     $hum_body = str_replace("[name]", $claim_name, $hum_body);
+    
+    // modify $claim_body
+    $claim_body = str_replace("[name]", $claim_name, $claim_body);
+    $claim_body = str_replace("[email]", $claim_email, $claim_body);
+    $claim_body = str_replace("[message]", $_POST['body'], $claim_body);
     
     // TODO
     // + deal with invalid emails

@@ -32,14 +32,14 @@ if($_POST['action'] != "mail")
 <form action="/submit" method="post">
     <table>
         <tr>
-            <td>Name</td>
+            <td class="label">Name</td>
             <td><input type="text" name="name"></td>
         <tr>
-            <td>Email</td>
+            <td class="label">Email</td>
             <td><input type="text" name="email"></td>
         </tr>
         <tr>
-            <td>Message</td>
+            <td class="label">Message</td>
             <td><textarea name="body"></textarea></td>
         </tr>
     </table>

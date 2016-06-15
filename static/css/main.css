@@ -68,8 +68,8 @@ ul {
 textarea,
 input {
     font-size: 12pt;
-    color: #fff;
-    background-color: #f00;
+    color: #000;
+    background-color: #fff;
 }
 
 textarea {
@@ -117,11 +117,17 @@ select:focus,
 textarea:focus,
 button:focus {
     outline: none;
+    color: #fff;
+    background-color: #f00;
 }
 
 td {
     padding: 3px 0;
     vertical-align: top;
+}
+
+td.label {
+    color: #f00;
 }
 
 /* mobil-ify */

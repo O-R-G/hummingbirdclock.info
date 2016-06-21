@@ -4,8 +4,7 @@
 // $obj = json_decode($json);
 // $freqs = $obj->frequencies;
 ?><script type="text/javascript" src="<? echo $host; ?>static/js/clock.js"></script>
-<script type="text/javascript" src="<? echo $host; ?>static/js/hum.js"></script>
-<? if ($wave == 1) { ?>
+<? if ($wave) { ?>
 <script type="text/javascript" src="<? echo $host; ?>static/js/hum-square.js"></script>
 <? } else { ?>
 <script type="text/javascript" src="<? echo $host; ?>static/js/hum.js"></script>

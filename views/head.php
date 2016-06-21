@@ -33,13 +33,11 @@ if (!isset($on))
     die($title);
 
 $wave = $_REQUEST['wave'];
-if (isset($wave)) { 
+if (isset($wave)) {
     set_cookie("wave", $wave);
 }
 else
     $wave = get_cookie("wave");
-    
-echo $wave;
 
 ?><!DOCTYPE html>
 <html>

@@ -5,7 +5,7 @@
 // $freqs = $obj->frequencies;
 ?><script type="text/javascript" src="<? echo $host; ?>static/js/clock.js"></script>
 <script type="text/javascript" src="<? echo $host; ?>static/js/hum.js"></script>
-<? if ($square == 1) { ?>
+<? if ($wave == 1) { ?>
 <script type="text/javascript" src="<? echo $host; ?>static/js/hum-square.js"></script>
 <? } else { ?>
 <script type="text/javascript" src="<? echo $host; ?>static/js/hum.js"></script>

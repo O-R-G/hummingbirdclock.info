@@ -32,12 +32,14 @@ else
 if (!isset($on))
     die($title);
 
-$square = $_REQUEST['square'];
-if (isset($on)) {
-    set_cookie("square", $square);
+$wave = $_REQUEST['wave'];
+if (isset($wave)) { 
+    set_cookie("wave", $wave);
 }
 else
-    $on = get_cookie("square");
+    $wave = get_cookie("wave");
+    
+echo $wave;
 
 ?><!DOCTYPE html>
 <html>

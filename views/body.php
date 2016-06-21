@@ -19,6 +19,14 @@ $object = $oo->get($uu->id);
     }  
 ?></section><?
 
+// if ($uri[0] == "about") {
+    
+    ?><!-- <section id="body">
+    <a href="/about">Go back . . .</a>
+    </section> --><?
+
+// }
+
 ?><section id="images"><?
 // collect images
 $media = $oo->media($uu->id);
@@ -34,5 +42,5 @@ foreach($media as $m)
 }
 ?></section>
 <div id="claims">
-    <a href= "/submit">Submit a Claim. . . </a>
+    <a href= "/submit">Submit a Claim . . . </a>
 </div>

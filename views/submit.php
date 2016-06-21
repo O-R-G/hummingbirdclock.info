@@ -1,4 +1,12 @@
 <?
+
+// form labels
+
+$label_1 = "1. What is the recording you want to submit for analysis?";
+$label_2 = "2. Where was this recording made and how did you obtain this recording?";
+$label_3 = "3. When do you believe this recording was made?";
+$label_4 = "4. Why do you want to verify when this recording made?";
+
 function is_valid_email($email)
 {
 	// return preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i", $email);
@@ -34,14 +42,44 @@ if($_POST['action'] != "mail")
     <table>
         <tr>
             <td class="label">Name</td>
-            <td><input type="text" name="name"></td>
-        <tr>
-            <td class="label">Email</td>
-            <td><input type="text" name="email"></td>
         </tr>
         <tr>
-            <td class="label">Message</td>
-            <td><textarea name="body"></textarea></td>
+            <td><input type="text" name="name"></td>
+        </tr>
+
+        <tr>
+            <td class="label">Email</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="email"></td>
+        </tr>
+
+        <tr>
+            <td class="label"><? echo $label_1; ?></td>
+        </tr>
+        <tr>
+            <td><textarea name="body_1"></textarea></td>
+        </tr>
+
+        <tr>
+            <td class="label"><? echo $label_2; ?></td>
+        </tr>
+        <tr>
+            <td><textarea name="body_2"></textarea></td>
+        </tr>
+
+        <tr>
+            <td class="label"><? echo $label_3; ?></td>
+        </tr>
+        <tr>
+            <td><textarea name="body_3"></textarea></td>
+        </tr>
+
+        <tr>
+            <td class="label"><? echo $label_4; ?></td>
+        </tr>
+        <tr>
+            <td><textarea name="body_4"></textarea></td>
         </tr>
     </table>
     <input type='hidden' name='action' value='mail'>
@@ -61,15 +99,35 @@ else
     $claim_name = $_POST['name'];
     $claim_email = $_POST['email'];
     $claim_subject = "Claim from ".$claim_name;
-    $claim_body = $object['notes']; //$_POST['body'];
+    $claim_body = $object['notes']; //$composite_body;
     
+    // build composite body
+
+    $line_return = "<br /><br />";
+
+    $composite_body  = $line_return . "--" . $line_return;
+    $composite_body .= $label_1 . "<br/><br/>";
+    $composite_body .= $_POST['body_1'];
+
+    $composite_body .= $line_return . "--" . $line_return;
+    $composite_body .= $label_2 . "<br/><br/>";
+    $composite_body .= $_POST['body_2'];
+
+    $composite_body .= $line_return . "--" . $line_return;
+    $composite_body .= $label_2 . "<br/><br/>";
+    $composite_body .= $_POST['body_3'];
+
+    $composite_body .= $line_return . "--" . $line_return;
+    $composite_body .= $label_4 . "<br/><br/>";
+    $composite_body .= $_POST['body_4'];
+
     // modify $hum_body
     $hum_body = str_replace("[name]", $claim_name, $hum_body);
     
     // modify $claim_body
     $claim_body = str_replace("[name]", $claim_name, $claim_body);
     $claim_body = str_replace("[email]", $claim_email, $claim_body);
-    $claim_body = str_replace("[message]", $_POST['body'], $claim_body);
+    $claim_body = str_replace("[message]", $composite_body, $claim_body);
     
     // TODO
     // + deal with invalid emails

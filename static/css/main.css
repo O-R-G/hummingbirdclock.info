@@ -130,7 +130,10 @@ td {
 }
 
 td.label {
-    color: #f00;
+    color: #fff;
+    font-family: "helvetica-neue-r", "helvetica neue", helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 17px;
 }
 
 /* image stuff */

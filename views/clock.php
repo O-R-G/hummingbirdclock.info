@@ -10,20 +10,23 @@
 <? } else { ?>
 <script type="text/javascript" src="<? echo $host; ?>static/js/hum.js"></script>
 <? } ?>
-<?
-if ($uu->id || $uri[0] == "submit")
-{
-?><div id="clock-container" class="small"><?
+<? if ($uu->id || $uri[0] == "submit")
+{ 
+?><div id="clock-container" class="small">
+    <a href="/">
+        <canvas id="clock-canvas"></canvas>
+    </a>
+  </div><?
 }
 else
 {
-?><div id="clock-container"><?
-}
-?>
+?><div id="clock-container">
     <a href="/about">
         <canvas id="clock-canvas"></canvas>
     </a>
-</div>
+  </div><?
+}
+?>
 
 <script>
     var cnavas_id, size, colours;

@@ -1,3 +1,4 @@
+
 const SMOOTH_SECOND_HAND = true;
 
 // DOM elements
@@ -192,10 +193,10 @@ function update_time(d)
     if (d === undefined)
         d = new Date();
 
-    time.h = d.getHours();
-    time.m = d.getMinutes();
-    time.s = d.getSeconds();
-    time.ms = d.getMilliseconds();
+    time.h = d.getUTCHours()+1;
+    time.m = d.getUTCMinutes();
+    time.s = d.getUTCSeconds();
+    time.ms = d.getUTCMilliseconds();
 }
 
 function update_title()

@@ -32,6 +32,13 @@ else
 if (!isset($on))
     die($title);
 
+$square = $_REQUEST['square'];
+if (isset($on)) {
+    set_cookie("square", $square);
+}
+else
+    $on = get_cookie("square");
+
 ?><!DOCTYPE html>
 <html>
 	<head>

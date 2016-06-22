@@ -5,7 +5,7 @@ $uri = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
 require_once("views/head.php");
 
 // splash page (clock)
-require_once("views/clock.php");
+// require_once("views/clock.php");
 
 if (!empty($uri[0])) {
     if ($uri[0] == "submit")

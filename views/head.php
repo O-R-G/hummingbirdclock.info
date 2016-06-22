@@ -13,7 +13,6 @@ require_once("lib/lib.php");
 require_once("lib/systemCookie.php");
     
 $db = db_connect("guest");
-
 $oo = new Objects();
 $mm = new Media();
 $ww = new Wires();
@@ -43,7 +42,6 @@ $wave = systemCookie("waveCookie", $wave, 0);
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link rel="stylesheet" href="/static/css/main.css">
-		<link rel="stylesheet" href="/static/css/helvetica-neue-r.css">
 		<link rel="apple-touch-icon" href="<? echo $host; ?>media/png/touchicon.png">
 	</head>
 	<body>

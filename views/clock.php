@@ -6,15 +6,14 @@
 ?><script type="text/javascript" src="<? echo $host; ?>static/js/clock.js"></script><? 
 if ($wave == 1) {
 ?><script type="text/javascript" src="<? echo $host; ?>static/js/hum.js"></script><?
-} else if ($wave == 2) {
+} if ($wave == 2) {
 ?><script type="text/javascript" src="<? echo $host; ?>static/js/hum-square.js"></script><?
-} else if ($wave == 3) { 
+} if ($wave == 3) { 
 ?><script type="text/javascript" src="<? echo $host; ?>static/js/hum-sawtooth.js"></script><?
-} else if ($wave == 4) { 
+} if ($wave == 4) { 
 ?>&nbsp;<?
-} else {
-?><script type="text/javascript" src="<? echo $host; ?>static/js/hum.js"></script><?
-}
+} 
+
 if ($uu->id || $uri[0] == "submit")
 { 
 ?><div id="clock-container" class="small">
@@ -55,5 +54,7 @@ else
     colours.circleopen = '#ffffff';
         
     init_clock(canvas_id);
-    init_hum();
+    if (this_audio_context) 
+       init_hum();
+
 </script>

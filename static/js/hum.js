@@ -1,5 +1,10 @@
-// var audio_context = new AudioContext();
-var audio_context = new webkitAudioContext(); // webkit prefix makes it work in safari
+var this_audio_context = window.AudioContext || // default
+      		         window.webkitAudioContext || // safari
+ 			 false; 
+
+if (this_audio_context) {
+
+var audio_context = new this_audio_context;	
 var hum_timer;
 var hum_delta = 1;
 var hum_base = 200;
@@ -38,3 +43,5 @@ function change_frequency()
         vco.frequency.value += rand;
 }
 */
+
+}

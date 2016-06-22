@@ -3,13 +3,19 @@
 // $json = file_get_contents($json_url);
 // $obj = json_decode($json);
 // $freqs = $obj->frequencies;
-?><script type="text/javascript" src="<? echo $host; ?>static/js/clock.js"></script>
-<? if ($wave) { ?>
-<script type="text/javascript" src="<? echo $host; ?>static/js/hum-square.js"></script>
-<? } else { ?>
-<script type="text/javascript" src="<? echo $host; ?>static/js/hum.js"></script>
-<? } ?>
-<? if ($uu->id || $uri[0] == "submit")
+?><script type="text/javascript" src="<? echo $host; ?>static/js/clock.js"></script><? 
+if ($wave == 1) {
+?><script type="text/javascript" src="<? echo $host; ?>static/js/hum.js"></script><?
+} else if ($wave == 2) {
+?><script type="text/javascript" src="<? echo $host; ?>static/js/hum-square.js"></script><?
+} else if ($wave == 3) { 
+?><script type="text/javascript" src="<? echo $host; ?>static/js/hum-sawtooth.js"></script><?
+} else if ($wave == 4) { 
+?>&nbsp;<?
+} else {
+?><script type="text/javascript" src="<? echo $host; ?>static/js/hum.js"></script><?
+}
+if ($uu->id || $uri[0] == "submit")
 { 
 ?><div id="clock-container" class="small">
     <a href="/">

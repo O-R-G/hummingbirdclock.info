@@ -55,5 +55,5 @@ else
     colours.circleopen = '#ffffff';
         
     init_clock(canvas_id);
-    // init_hum();
+    init_hum();
 </script>

@@ -129,29 +129,24 @@ else
     $claim_body = str_replace("[email]", $claim_email, $claim_body);
     $claim_body = str_replace("[message]", $composite_body, $claim_body);
     
-    // TODO
+    // ** todo **
     // + deal with invalid emails
-    // + send a confirmation email to claimant
 
+    // debug
+    /*
     echo    $claim_name . "," .
             $claim_email . "," .
             $hum_name . "," .
             $hum_email . "," .
             $claim_subject . "," .
             $claim_body . ",";
-    
-    $msg = "First line of text\nSecond line of text";
-    $msg = wordwrap($msg,70);
-    $test1 = mail("reinfurt@princeton.edu","My subject",$msg);
-    $test2 = mail("reinfurt@o-r-g.com","My subject",$msg);
-    echo $test1 . " , " . $test2;
-    die(" -- exit.");
+    */
 
     // send email to hummingbird
     send_mail_long( $claim_name, $claim_email, 
                     $hum_name, $hum_email, 
                     $claim_subject, $claim_body);
-    
+
     // send email to claimant
     send_mail_long( $hum_name, $hum_email,
                     $claim_name, $claim_email,

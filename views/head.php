@@ -10,7 +10,8 @@ require_once($config_dir."url.php");
 require_once($config_dir."request.php");
 
 require_once("lib/lib.php");
-
+require_once("lib/systemCookie.php");
+    
 $db = db_connect("guest");
 
 $oo = new Objects();
@@ -33,11 +34,7 @@ if (!isset($on))
     die($title);
 
 $wave = $_REQUEST['wave'];
-if (isset($wave)) {
-    set_cookie("wave", $wave);
-}
-else
-    $wave = get_cookie("wave");
+$wave = systemCookie("waveCookie", $wave, 0);
 
 ?><!DOCTYPE html>
 <html>

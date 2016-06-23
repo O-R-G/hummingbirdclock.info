@@ -35,8 +35,6 @@ if (!isset($on))
 $wave = $_REQUEST['wave'];
 $wave = systemCookie("waveCookie", $wave, 0);
 
-echo $wave;
-
 ?><!DOCTYPE html>
 <html>
 	<head>

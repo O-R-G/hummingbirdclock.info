@@ -13,7 +13,7 @@ var hum_max = 400;
 
 // vco
 var vco = audio_context.createOscillator();
-vco.type = 'sine';
+vco.type = 'sawtooth';
 vco.frequency.value = hum_base;
 vco.start(0);
 

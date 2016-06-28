@@ -4,15 +4,7 @@
 // $obj = json_decode($json);
 // $freqs = $obj->frequencies;
 ?><script type="text/javascript" src="<? echo $host; ?>static/js/clock.js"></script><? 
-if ($wave == 1) {
 ?><script type="text/javascript" src="<? echo $host; ?>static/js/hum.js"></script><?
-} if ($wave == 2) {
-?><script type="text/javascript" src="<? echo $host; ?>static/js/hum-square.js"></script><?
-} if ($wave == 3) { 
-?><script type="text/javascript" src="<? echo $host; ?>static/js/hum-sawtooth.js"></script><?
-} if ($wave == 4) { 
-?>&nbsp;<?
-} 
 
 if ($uu->id || $uri[0] == "submit")
 { 

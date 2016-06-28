@@ -37,7 +37,7 @@ if($_POST['action'] != "mail")
 {
 ?>
 <section id="body">
-<header>Submit a Claim. . . </header>
+<header>Submit a Claim . . . </header>
 <form action="/submit" method="post">
     <table>
         <tr>

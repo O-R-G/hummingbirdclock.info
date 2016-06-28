@@ -22,6 +22,7 @@ $rr = new Request();
 // document title
 $title = date("H:i:s");
 
+/*
 $on = $_REQUEST['status'];
 if (isset($on)) {
     set_cookie("status", $on);
@@ -31,9 +32,7 @@ else
 
 if (!isset($on))
     die($title);
-
-$wave = $_REQUEST['wave'];
-$wave = systemCookie("waveCookie", $wave, 0);
+*/
 
 ?><!DOCTYPE html>
 <html>

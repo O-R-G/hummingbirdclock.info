@@ -5,6 +5,7 @@ $object = $oo->get($uu->id);
     <header><? echo $object['name1']; ?></header><?
     echo nl2br($object['body']); 
     $children = $oo->children($uu->id);
+    $siblings = $oo->children(1);   // hard-coded
     if (!empty($children))
     {
         ?><ul><?
@@ -12,6 +13,18 @@ $object = $oo->get($uu->id);
         {
             $c_url = $uu->url."/".$child['url'];
         ?><li><a href="<?= $c_url; ?>"><?= $child['name1']; ?></a></li><?
+        }
+        ?></ul><?
+        echo nl2br($object['deck']);
+        ?><?
+    }
+    else 
+    {
+        ?><ul><?
+        foreach($siblings as $sibling)
+        {
+            $c_url = $sibling['url'];
+        ?><li><a href="<?= $c_url; ?>"><?= $sibling['name1']; ?></a></li><?
         }
         ?></ul><?
         echo nl2br($object['deck']);
@@ -40,7 +53,9 @@ foreach($media as $m)
     </div><?
     }
 }
-?></section>
-<div id="claims">
+?></section><?
+if ($uu->id || $uri[0] == "submit") {
+?><div id="claims">
     <a href= "/submit">Submit a Claim . . . </a>
-</div>
+</div><? 
+} ?>

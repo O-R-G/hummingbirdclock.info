@@ -5,7 +5,7 @@
 $label_1 = "1. What is the recording you want to submit for analysis?";
 $label_2 = "2. Where was this recording made and how did you obtain this recording?";
 $label_3 = "3. When do you believe this recording was made?";
-$label_4 = "4. Why do you want to verify when this recording made?";
+$label_4 = "4. Why do you want to verify when this recording was made?";
 
 function is_valid_email($email)
 {

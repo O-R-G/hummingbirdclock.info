@@ -12,7 +12,7 @@ $object = $oo->get($uu->id);
         foreach($children as $child)
         {
             $c_url = $uu->url."/".$child['url'];
-        ?><li><a href="<?= $c_url; ?>"><?= $child['name1']; ?></a></li><?
+            ?><li><a href="<?= $c_url; ?>"><?= $child['name1']; ?></a></li><?
         }
         ?></ul><?
         echo nl2br($object['deck']);
@@ -24,8 +24,10 @@ $object = $oo->get($uu->id);
         foreach($siblings as $sibling)
         {
             $c_url = $sibling['url'];
-        ?><li><a href="<?= $c_url; ?>"><?= $sibling['name1']; ?></a></li><?
+            ?><li><a href="<?= $c_url; ?>"><?= $sibling['name1']; ?></a></li><?
         }
+        ?><li>&nbsp;</li><?
+        ?><li><a href="/about">Go back . . .</a></li><?
         ?></ul><?
         echo nl2br($object['deck']);
         ?><?

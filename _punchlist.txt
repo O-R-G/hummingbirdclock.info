@@ -9,3 +9,5 @@
   autoplay not possible, so add event handler to start playing
   perhaps add an audio on/off like radio athenes w/js event
   which comes up negative on iOS and unavailable on firefox
+- lose about header?
+- type size on clock?

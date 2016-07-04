@@ -2,7 +2,13 @@
 $object = $oo->get($uu->id);
 ?>
 <section id="body">
-    <header><? echo $object['name1']; ?></header><?
+    <?
+    // omit header on about
+    if ($uu->url == "about") {
+        ?><header>&nbsp;</header><?
+    } else {
+        ?><header><? echo $object['name1']; ?></header><?
+    }
     echo nl2br($object['body']); 
     $children = $oo->children($uu->id);
     $siblings = $oo->siblings($uu->id);

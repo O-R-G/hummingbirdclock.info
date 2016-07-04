@@ -3,13 +3,15 @@
 + rm submit a claim on home
 + rm all images
 + shrink submit boxes
-/ lawrence to add where is ...
-- firefox sound?
++ lawrence to add where is ...
++ submit a claim rendering hint
++ rm current object from sibling nav list
 - ios sound
   autoplay not possible, so add event handler to start playing
   perhaps add an audio on/off like radio athenes w/js event
   which comes up negative on iOS and unavailable on firefox
-- lose about header?
-- type size on clock?
-+ submit a claim rendering hint
-+ rm current object from sibling nav list
+- sound on / off control
+- lose about header
+- type size on clock
+- firefox sound
+

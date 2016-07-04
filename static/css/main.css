@@ -163,6 +163,7 @@ img {
     bottom: 15px;
     left: 15px;
     width: 50px;
+    z-index:+1;
     }
 
 /* mobil-ify */

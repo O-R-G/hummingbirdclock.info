@@ -52,6 +52,8 @@ else
 
 </script>
 
+<!-- 
 <div id="controls">
     <a href="javascript:hum_off();">&times</a>
 </div>
+-->

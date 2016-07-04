@@ -5,11 +5,11 @@ $object = $oo->get($uu->id);
     <header><? echo $object['name1']; ?></header><?
     echo nl2br($object['body']); 
     $children = $oo->children($uu->id);
-    $siblings = $oo->children(1);   // hard-coded
+    $siblings = $oo->siblings($uu->id);
     if (!empty($children))
     {
         ?><ul><?
-        foreach($children as $child)
+        foreach ($children as $child)
         {
             $c_url = $uu->url."/".$child['url'];
             ?><li><a href="<?= $c_url; ?>"><?= $child['name1']; ?></a></li><?
@@ -21,10 +21,11 @@ $object = $oo->get($uu->id);
     else 
     {
         ?><ul><?
-        foreach($siblings as $sibling)
+        foreach ($siblings as $sibling)
         {
-            $c_url = $sibling['url'];
-            ?><li><a href="<?= $c_url; ?>"><?= $sibling['name1']; ?></a></li><?
+            $thissibling = $oo->get($sibling);
+            $c_url = $thissibling['url'];
+            ?><li><a href="<?= $c_url; ?>"><?= $thissibling['name1']; ?></a></li><?
         }
         ?><li>&nbsp;</li><?
         ?><li><a href="/about">Go back . . .</a></li><?
@@ -33,15 +34,6 @@ $object = $oo->get($uu->id);
         ?><?
     }  
 ?></section><?
-
-// if ($uri[0] == "about") {
-    
-    ?><!-- <section id="body">
-    <a href="/about">Go back . . .</a>
-    </section> --><?
-
-// }
-
 ?><section id="images"><?
 // collect images
 $media = $oo->media($uu->id);

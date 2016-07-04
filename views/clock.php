@@ -5,6 +5,7 @@
 // $freqs = $obj->frequencies;
 ?><script type="text/javascript" src="<? echo $host; ?>static/js/clock.js"></script><? 
 ?><script type="text/javascript" src="<? echo $host; ?>static/js/hum.js"></script><?
+?><script type="text/javascript" src="<? echo $host; ?>static/js/controls.js"></script><?
 
 if ($uu->id || $uri[0] == "submit")
 { 
@@ -50,3 +51,7 @@ else
        init_hum();
 
 </script>
+
+<div id="controls">
+    <a href="javascript:hum_off();">&times</a>
+</div>

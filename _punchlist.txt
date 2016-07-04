@@ -6,12 +6,13 @@
 + lawrence to add where is ...
 + submit a claim rendering hint
 + rm current object from sibling nav list
++ rm about header    
+- sound on / off control
 - ios sound
   autoplay not possible, so add event handler to start playing
   perhaps add an audio on/off like radio athenes w/js event
   which comes up negative on iOS and unavailable on firefox
-- sound on / off control
-- lose about header
+  refine init_hum check function
 - type size on clock
 - firefox sound
-
+- clock.js timeout/setinterval length

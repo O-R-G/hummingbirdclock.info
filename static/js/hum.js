@@ -2,7 +2,9 @@ var this_audio_context = window.AudioContext || // default
       		             window.webkitAudioContext || // safari
  			             false; 
 
+/*
 if (this_audio_context) {
+*/
 
 var audio_context = new this_audio_context;	
 var hum_timer;
@@ -32,6 +34,10 @@ function init_hum()
 }
 
 /*
+}
+*/
+
+/*
 function change_frequency()
 {
     rand = (Math.floor(Math.random() * 3) - 1) * hum_delta;
@@ -44,4 +50,3 @@ function change_frequency()
 }
 */
 
-}

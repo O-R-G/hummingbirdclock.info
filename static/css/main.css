@@ -156,6 +156,15 @@ img {
     width: 100%;
 }
 
+/* audio */
+
+#controls {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    width: 50px;
+    }
+
 /* mobil-ify */
 @media screen and (max-width: 768px) {
     #clock-container.small {

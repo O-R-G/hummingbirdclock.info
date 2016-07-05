@@ -12,6 +12,12 @@ function init_controls() {
 }
 
 function hum_on_off() {
+	if (!audio_context) {
+		// if iOS need user event to unlock context
+	    get_audio_context();
+		init_hum();
+    	console.log(audio_context);
+	}
     var controls = document.getElementById("controls");
 	var audio = getCookie("audio");
 	if (audio == "off")

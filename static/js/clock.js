@@ -258,7 +258,7 @@ function draw_hands()
             else if (l > r * s_max & rand > 0)
                 rand = -1;
 	
-	    if (this_audio_context)
+	    if (audio_context)
 		vco.frequency.value += rand * hum_delta;
             l += rand;   
             x = Math.cos(rad[k]) * l + center.x;

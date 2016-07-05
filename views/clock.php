@@ -7,16 +7,13 @@
 ?><script type="text/javascript" src="<? echo $host; ?>static/js/hum.js"></script><?
 ?><script type="text/javascript" src="<? echo $host; ?>static/js/controls.js"></script><?
 
-if ($uu->id || $uri[0] == "submit")
-{ 
+if ($uu->id || $uri[0] == "submit") { 
 ?><div id="clock-container" class="small">
     <a href="/">
         <canvas id="clock-canvas"></canvas>
     </a>
   </div><?
-}
-else
-{
+} else {
 ?><div id="clock-container">
     <a href="/about">
         <canvas id="clock-canvas"></canvas>
@@ -29,13 +26,10 @@ else
     var cnavas_id, size, colours;
     canvas_id = "clock-canvas";
     <?
-    if ($uu->id || $uri[0] == "submit")
-    {
-    ?>size = "small";<?
-    }
-    else
-    {
-    ?>size = "large";<?
+    if ($uu->id || $uri[0] == "submit") {
+        ?>size = "small";<?
+    } else {
+        ?>size = "large";<?
     }
     ?>
     colours = {};
@@ -47,12 +41,11 @@ else
     colours.circleopen = '#ffffff';
         
     init_clock(canvas_id);
-    if (this_audio_context) 
-       init_hum();
-
+    get_audio_context();
+    if (audio_context)
+        init_hum();
 </script>
 
-<!-- 
 <div id="controls">
     &times;
 </div>
@@ -60,4 +53,3 @@ else
 <script>
     init_controls();
 </script>
--->

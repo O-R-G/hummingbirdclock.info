@@ -52,8 +52,10 @@ else
 
 </script>
 
-<!-- 
 <div id="controls">
-    <a href="javascript:hum_off();">&times</a>
+    &times;
 </div>
--->
+
+<script>
+    init_controls();
+</script>

@@ -274,8 +274,6 @@ function draw_hands()
         }
         context.lineTo(x, y);
         context.stroke();
-    }
-    
-
+    }    
 }
 

@@ -52,6 +52,7 @@ else
 
 </script>
 
+<!-- 
 <div id="controls">
     &times;
 </div>
@@ -59,3 +60,4 @@ else
 <script>
     init_controls();
 </script>
+-->

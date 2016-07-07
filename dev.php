@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
 <style>
-.button {
+.btn {
     background-color: #000;
     border: none;
-    color: #FFF;
+    border-radius: 4px;
     padding: 15px 30px;
     margin: 15px;
     text-align: center;
-    font-size: 16px;
+    font-size: 36px;
+    color: #FFF;
 }
 </style>
-<input id="play" class="button" type="button" value="* p l a y *"/>
-<input id="stop" class="button" type="button" value="* s t o p *">
+<input id="play" class="btn" type="button" value="* p l a y *"/>
+<input id="stop" class="btn" type="button" value="* s t o p *">
 
 <script>
 

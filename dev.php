@@ -10,6 +10,7 @@
     text-align: center;
     font-size: 36px;
     color: #FFF;
+    -webkit-appearance: none;
 }
 </style>
 <input id="play" class="btn" type="button" value="* p l a y *"/>

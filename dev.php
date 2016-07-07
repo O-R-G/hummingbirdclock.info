@@ -8,7 +8,7 @@
     padding: 15px 30px;
     margin: 15px;
     text-align: center;
-    font-size: 36px;
+    font-size: 36pt;
     color: #FFF;
     -webkit-appearance: none;
 }

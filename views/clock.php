@@ -46,10 +46,10 @@ if ($uu->id || $uri[0] == "submit") {
         init_hum();
 </script>
 
-<div id="controls">
+<div id="control">
     &times;
 </div>
 
 <script>
-    init_controls();
+    init_control();
 </script>

@@ -5,7 +5,7 @@
 // $freqs = $obj->frequencies;
 ?><script type="text/javascript" src="<? echo $host; ?>static/js/clock.js"></script><? 
 ?><script type="text/javascript" src="<? echo $host; ?>static/js/hum.js"></script><?
-?><script type="text/javascript" src="<? echo $host; ?>static/js/controls.js"></script><?
+?><!-- <script type="text/javascript" src="<? echo $host; ?>static/js/controls.js"></script>--><?
 
 if ($uu->id || $uri[0] == "submit") { 
 ?><div id="clock-container" class="small">

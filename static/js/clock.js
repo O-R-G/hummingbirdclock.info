@@ -258,8 +258,10 @@ function draw_hands()
             else if (l > r * s_max & rand > 0)
                 rand = -1;
 	
-	    if (audio_context)
-		vco.frequency.value += rand * hum_delta;
+            audio = get_cookie("audio");
+	        if (audio == "true")
+		        vco.frequency.value += rand * hum_delta;
+
             l += rand;   
             x = Math.cos(rad[k]) * l + center.x;
             y = Math.sin(rad[k]) * l + center.y;

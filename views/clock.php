@@ -3,9 +3,8 @@
 // $json = file_get_contents($json_url);
 // $obj = json_decode($json);
 // $freqs = $obj->frequencies;
-?><script type="text/javascript" src="<? echo $host; ?>static/js/clock.js"></script><? 
 ?><script type="text/javascript" src="<? echo $host; ?>static/js/hum.js"></script><?
-?><!-- <script type="text/javascript" src="<? echo $host; ?>static/js/controls.js"></script>--><?
+?><script type="text/javascript" src="<? echo $host; ?>static/js/clock.js"></script><? 
 
 if ($uu->id || $uri[0] == "submit") { 
 ?><div id="clock-container" class="small">
@@ -21,6 +20,8 @@ if ($uu->id || $uri[0] == "submit") {
   </div><?
 }
 ?>
+
+<button id="control" type="button">+</button>
 
 <script>
     var cnavas_id, size, colours;
@@ -40,18 +41,6 @@ if ($uu->id || $uri[0] == "submit") {
     colours.circle = '#000';
     colours.circleopen = '#ffffff';
         
+    init_hum();
     init_clock(canvas_id);
-    get_audio_context();
-    if (audio_context)
-        init_hum();
 </script>
-
-<!--
-<div id="control">
-    &times;
-</div>
-
-<script>
-    init_control();
-</script>
--->

@@ -28,13 +28,13 @@ function init_hum() {
     audio = get_cookie("audio");
     audio_context = get_audio_context();
     control = get_control();
-    if (audio == "true") {
-        if (audio_context != "false") {
+    if (audio_context != "false") {
+        if (audio == "true") {
             set_hum();
             hum_on();
-        } else {
-            set_cookie("audio", "false");
-        }
+        } 
+    } else {
+        set_cookie("audio", "false");
     }
 }
 
@@ -57,7 +57,7 @@ function set_hum() {
     vco.type = 'sine';
     vco.frequency.value = hum_base;
     vca = audio_context.createGain();
-    vca.gain.value = .25;
+    vca.gain.value = .5;
     vco.connect(vca);
     vca.connect(audio_context.destination);            
 }
@@ -78,6 +78,7 @@ function hum_off() {
     control.innerHTML="+";
     set_cookie("audio", "false");
     audio = get_cookie("audio");
+    cleanup();
     console.log("audio = " + audio);
 }
 

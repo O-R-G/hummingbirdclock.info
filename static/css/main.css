@@ -69,6 +69,7 @@ ul {
     bottom: 0;
     right: 0;
     padding: 20px;
+    background-color:rgba(0,0,0,0.5);
     -webkit-font-smoothing: antialiased;
 }
 
@@ -168,7 +169,7 @@ img {
     padding-left: 15px;
     border: none;
     border-radius: 0px;
-    background-color:#000;
+    background-color:rgba(0,0,0,0.5);
     color:#FFF;
     font-size: 18pt;
     z-index:+1;
@@ -189,6 +190,7 @@ img {
     
     #body {
         padding: 20px;
+        padding-bottom: 100px;
     }
 }
 

@@ -10,11 +10,7 @@
 + sound on / off control
 / ios sound
   autoplay not possible, so add event handler to start playing
-  perhaps add an audio on/off like radio athenes w/js event
-  which comes up negative on iOS and unavailable on firefox
-  refine init_hum check function
-    ** simply need to instantiate audio context for ios (in hum.js)
-    before playing anything (!) **
++ submit a claim spacing, background
 - type size on clock
 - firefox sound
 - clock.js timeout/setinterval length

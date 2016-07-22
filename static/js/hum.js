@@ -31,10 +31,8 @@ function init_hum() {
     console.log("audio_context = " + audio_context);
     control = get_control();
     if (audio_context != "false") {
-        if (audio != "false") {
-            set_hum();
-            hum_on();
-        } 
+        set_hum();
+        hum_on();
     } else {
         set_cookie("audio", "false");
     }

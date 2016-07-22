@@ -21,7 +21,7 @@ var hand_timer;
 // booleans
 var show_hands;
 
-var fr = 60;
+var fr = 30; // [60]
 
 // set size variables
 function set_size(width, height)

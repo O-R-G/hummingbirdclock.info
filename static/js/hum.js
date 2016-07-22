@@ -59,7 +59,7 @@ function set_hum() {
     vco.type = 'sine';
     vco.frequency.value = hum_base;
     vca = audio_context.createGain();
-    vca.gain.value = .75;
+    vca.gain.value = 1.25;
     vco.connect(vca);
     vca.connect(audio_context.destination);            
 }

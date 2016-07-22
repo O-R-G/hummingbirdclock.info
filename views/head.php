@@ -22,18 +22,6 @@ $rr = new Request();
 // document title
 $title = date("H:i:s");
 
-/*
-$on = $_REQUEST['status'];
-if (isset($on)) {
-    set_cookie("status", $on);
-}
-else
-    $on = get_cookie("status");
-
-if (!isset($on))
-    die($title);
-*/
-
 ?><!DOCTYPE html>
 <html>
 	<head>

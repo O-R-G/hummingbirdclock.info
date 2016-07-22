@@ -26,10 +26,12 @@ var hum_max = 400;
 
 function init_hum() {
     audio = get_cookie("audio");
+    console.log("audio = " + audio);
     audio_context = get_audio_context();
+    console.log("audio_context = " + audio_context);
     control = get_control();
     if (audio_context != "false") {
-        if (audio == "true") {
+        if (audio != "false") {
             set_hum();
             hum_on();
         } 
@@ -78,8 +80,8 @@ function hum_off() {
     control.innerHTML="+";
     set_cookie("audio", "false");
     audio = get_cookie("audio");
-    cleanup();
     console.log("audio = " + audio);
+    cleanup();
 }
 
 function hum_on_off() {

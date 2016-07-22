@@ -10,7 +10,11 @@
 + sound on / off control
 / ios sound
   autoplay not possible, so add event handler to start playing
+  cookie still behaves erratically to do with get_audio_context()
+  can debug with alert box on live site or figure out how to make 
+   hummingbird.local accessible local
 + submit a claim spacing, background
 - type size on clock
 - firefox sound
 - clock.js timeout/setinterval length
+- cache.manifest 

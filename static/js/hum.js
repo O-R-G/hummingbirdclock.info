@@ -85,7 +85,7 @@ function hum_off() {
 }
 
 function hum_on_off() {
-    if (audio != "on")
+    if (audio == "off")
         hum_on();
     else
         hum_off();

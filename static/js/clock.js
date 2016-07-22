@@ -259,7 +259,7 @@ function draw_hands()
                 rand = -1;
 	
             audio = get_cookie("audio");
-	        if (audio == "true")
+	        if (audio == "on")
 		        vco.frequency.value += rand * hum_delta;
 
             l += rand;   

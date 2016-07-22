@@ -31,10 +31,12 @@ function init_hum() {
     console.log("audio_context = " + audio_context);
     control = get_control();
     if (audio_context != "false") {
-        set_hum();
-        hum_on();
+        if (audio != "off") {
+            set_hum();
+            hum_on();
+        }
     } else {
-        set_cookie("audio", "false");
+        set_cookie("audio", "off");
     }
 }
 
@@ -68,7 +70,7 @@ function hum_on() {
     set_hum();
     vco.start(0); 
     control.innerHTML="&times;";
-    set_cookie("audio", "true");
+    set_cookie("audio", "on");
     audio = get_cookie("audio");
     console.log("audio = " + audio);
 }
@@ -76,14 +78,14 @@ function hum_on() {
 function hum_off() {
     vco.stop(0); 
     control.innerHTML="+";
-    set_cookie("audio", "false");
+    set_cookie("audio", "off");
     audio = get_cookie("audio");
     console.log("audio = " + audio);
     cleanup();
 }
 
 function hum_on_off() {
-    if (audio != "true")
+    if (audio != "on")
         hum_on();
     else
         hum_off();

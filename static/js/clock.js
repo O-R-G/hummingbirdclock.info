@@ -164,8 +164,10 @@ function draw_circle()
     context.font = get_font();
     context.fillStyle = "#FFFFFF";
     context.textAlign = "center";
+    /*
     if (size == "large")
         context.fillText("THE HUMMINGBIRD CLOCK", center.x, center.y - r / 2);
+    */
     // context.fillText("?", center.x, center.y - r / 2);
 }
 
